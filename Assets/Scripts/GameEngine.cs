@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -25,32 +26,8 @@ public class GameEngine : MonoBehaviour
     private int pin1cur;
     private int pin2cur;
     private int pin3cur;
-    private void Start()
-    {
-        pin1pintext.text = Random.Range(1, 5).ToString();
-        pin2pintext.text = Random.Range(1, 5).ToString();
-        pin3pintext.text = Random.Range(1, 5).ToString();
-        timerIsRunning = true;
-    }
-    public void Trojan()
-    {
-        pin1cur += 1;
-        pin2cur -= 1;
-        pin3cur += 0;
-    }
-    public void Virus()
-    {
-        pin1cur -= 1;
-        pin2cur += 2;
-        pin3cur -= 1;
-    }
-    public void Script()
-    {
-        pin1cur -= 1;
-        pin2cur += 1;
-        pin3cur += 1;
-    }
-    void Update()
+
+    public void Timer()
     {
         if (timerIsRunning)
         {
@@ -78,5 +55,81 @@ public class GameEngine : MonoBehaviour
                 BadEnd.SetActive(true);
             }
         }
+    }
+
+
+
+    public void Tools(int indexTools)
+    {
+        switch (indexTools)
+        {
+            case 0:
+                Trojan(pin1cur = Convert.ToInt32(pin1currentpintext.text),
+                       pin2cur = Convert.ToInt32(pin2currentpintext.text),
+                       pin3cur = Convert.ToInt32(pin3currentpintext.text)
+                       );
+                break;
+
+            case 1:
+                Virus(pin1cur = Convert.ToInt32(pin1currentpintext.text),
+                       pin2cur = Convert.ToInt32(pin2currentpintext.text),
+                       pin3cur = Convert.ToInt32(pin3currentpintext.text)
+                       );
+                break;
+            case 2:
+                Script(pin1cur = Convert.ToInt32(pin1currentpintext.text),
+                       pin2cur = Convert.ToInt32(pin2currentpintext.text),
+                       pin3cur = Convert.ToInt32(pin3currentpintext.text)
+                       );
+                break;
+
+            default:
+                break;
+        }
+    }
+
+    public void Execute(int pin1cur, int pin2cur, int pin3cur)
+    {
+        pin1currentpintext.text = pin1cur.ToString();
+        pin2currentpintext.text = pin2cur.ToString();
+        pin3currentpintext.text = pin3cur.ToString();
+    }
+    public void Trojan(int pin1cur, int pin2cur, int pin3cur)
+    {
+        pin1cur = pin1cur + 1;
+        pin2cur = pin2cur - 1;
+        pin3cur = pin3cur + 0;
+
+        Execute(pin1cur, pin2cur, pin3cur);
+    }
+    public void Virus(int pin1cur, int pin2cur, int pin3cur)
+    {
+        pin1cur = pin1cur - 1;
+        pin2cur = pin2cur + 2;
+        pin3cur = pin3cur - 0;
+
+        Execute(pin1cur, pin2cur, pin3cur);
+    }
+
+    public void Script(int pin1cur, int pin2cur, int pin3cur)
+    {
+        pin1cur = pin1cur - 1;
+        pin2cur = pin2cur + 1;
+        pin3cur = pin3cur + 0;
+
+        Execute(pin1cur, pin2cur, pin3cur);
+    }
+    private void Start()
+    {
+        pin1pintext.text = 4.ToString();
+        pin2pintext.text = 3.ToString();
+        pin3pintext.text = 6.ToString();
+        timerIsRunning = true;
+    }
+
+
+    void Update()
+    {
+        Timer();
     }
 }
