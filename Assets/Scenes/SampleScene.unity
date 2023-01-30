@@ -209,12 +209,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 625515770}
         m_TargetAssemblyTypeName: GameEngine, Assembly-CSharp
-        m_MethodName: Virus
-        m_Mode: 1
+        m_MethodName: Tools
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 1
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -1306,8 +1306,8 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 625515770}
         m_TargetAssemblyTypeName: GameEngine, Assembly-CSharp
-        m_MethodName: Trojan
-        m_Mode: 1
+        m_MethodName: Tools
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -2353,12 +2353,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 625515770}
         m_TargetAssemblyTypeName: GameEngine, Assembly-CSharp
-        m_MethodName: Script
-        m_Mode: 1
+        m_MethodName: Tools
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 2
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -2692,7 +2692,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: You in MainFrame!
+  m_Text: You are in MainFrame!
 --- !u!222 &1823493990
 CanvasRenderer:
   m_ObjectHideFlags: 0

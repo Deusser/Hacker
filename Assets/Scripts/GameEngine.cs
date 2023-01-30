@@ -29,13 +29,9 @@ public class GameEngine : MonoBehaviour
 
     public void Timer()
     {
-        if (timerIsRunning)
         {
             if (timeRemaining > 0)
             {
-                pin1currentpintext.text = pin1cur.ToString();
-                pin2currentpintext.text = pin2cur.ToString();
-                pin3currentpintext.text = pin3cur.ToString();
                 gametime = Mathf.Round(timeRemaining);
                 timerText.text = gametime.ToString();
                 timeRemaining -= Time.deltaTime;
@@ -96,26 +92,26 @@ public class GameEngine : MonoBehaviour
     }
     public void Trojan(int pin1cur, int pin2cur, int pin3cur)
     {
-        pin1cur = pin1cur + 1;
-        pin2cur = pin2cur - 1;
-        pin3cur = pin3cur + 0;
+        pin1cur += 1;
+        pin2cur -= 1;
+        pin3cur += 0;
 
         Execute(pin1cur, pin2cur, pin3cur);
     }
     public void Virus(int pin1cur, int pin2cur, int pin3cur)
     {
-        pin1cur = pin1cur - 1;
-        pin2cur = pin2cur + 2;
-        pin3cur = pin3cur - 0;
+        pin1cur -= 1;
+        pin2cur += 2;
+        pin3cur -= 1;
 
         Execute(pin1cur, pin2cur, pin3cur);
     }
 
     public void Script(int pin1cur, int pin2cur, int pin3cur)
     {
-        pin1cur = pin1cur - 1;
-        pin2cur = pin2cur + 1;
-        pin3cur = pin3cur + 0;
+        pin1cur -= 1;
+        pin2cur += 1;
+        pin3cur += 1;
 
         Execute(pin1cur, pin2cur, pin3cur);
     }
